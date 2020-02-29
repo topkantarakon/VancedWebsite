@@ -24,3 +24,5 @@ Insert the following code in the `head` section of your pages:
     <meta name="theme-color" content="#0c0c0f">
 
 *Optional* - Check your favicon with the [favicon checker](https://realfavicongenerator.net/favicon_checker)
+
+Test 1

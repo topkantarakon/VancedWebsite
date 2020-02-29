@@ -3,7 +3,8 @@
 <!--Vanced is very extra very super advenced, wait the ads are gone.. OhnoOO!.. Wait? Who likes ads... My brain too big for this-->
 <html lang="en">
 
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   
   <!-- Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,8 +42,8 @@
 
 
   <!-- Stylesheets -->
-  <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
-  <link type="text/css" rel="stylesheet" href="css/style.css?v101" media="screen,projection" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link type="text/css" rel="stylesheet" href="css/style.css?v102" media="screen,projection" />
 </head>
 
 <body>
@@ -87,84 +88,76 @@
       <div class="infocard">
         <h3>Downloads</h3>
         <div class="toprow">
-          <p class="content">version:</p>
+          <p class="content">Version:</p>
           <p class="content">15.05.54</p>
         </div>
         <form id="version_form">
-          <p class="content">variant:</p>
+          <p class="content">Variant:</p>
           <p class="content">
             <label>
               <input name="version" type="radio" id="version--nonroot" value="nonroot" checked onchange="mButtonOn()" />
-              <span>nonroot</span>
+              <span>Non-Root</span>
             </label>
           </p>
           <p class="content">
             <label>
               <input name="version" type="radio" id="version--root" value="root" onchange="mButtonOff()" />
-              <span>root</span>
+              <span>Root</span>
             </label>
           </p>
-          <p class="q-btn tooltip">?
-            <span class="tooltiptext">nonroot is for phones without root access, pick this one if you're
-              unsure</span>
-          </p>
+          <a class="q-btn tooltipped" data-position="bottom" data-tooltip="Non-Root is for phones without root access, pick this one if you're unsure.">?</a>
         </form>
         <form id="arch_form">
-          <p class="content">arch:</p>
+          <p class="content">Arch:</p>
           <p class="content">
             <label>
               <input name="arch" type="radio" id="arch--normal" value="default" checked />
-              <span>default</span>
+              <span>Default</span>
             </label>
           </p>
           <p class="content">
             <label>
               <input name="arch" type="radio" id="arch--legacy" value="legacy" />
-              <span>legacy</span>
+              <span>Legacy</span>
             </label>
           </p>
-          <p class="q-btn tooltip">?
-            <span class="tooltiptext">default is for phones made after 2016 that have an arm64 chip, legacy is for
-              older phones and pc android emulators</span>
-          </p>
+         <a class="q-btn tooltipped" data-position="bottom" data-tooltip="Default is for phones made after 2016 that have an arm64 chip, legacy is for older phones and pc android emulators.">?</a>
         </form>
 
         <form id="theme_form">
-          <p class="content">theme:</p>
+          <p class="content">Theme:</p>
           <p class="content">
             <label>
               <input name="theme" type="radio" id="theme--dark" value="dark" checked />
-              <span>dark</span>
+              <span>Dark</span>
             </label>
           </p>
           <p class="content">
             <label>
               <input name="theme" type="radio" id="theme--black" value="black" />
-              <span>black</span>
+              <span>Black</span>
             </label>
           </p>
-          <p class="q-btn tooltip">?
-            <span class="tooltiptext">dark is google dark gray colour, black is amoled pure black</span>
-          </p>
+          <a class="q-btn tooltipped" data-position="bottom" data-tooltip="Dark is google dark gray colour, black is amoled pure black.">?</a>
         </form>
         <button class="button" onclick="download()"> Download Vanced
           <!--styled button -> request server.js for files | pass ejs values from database back and send.file output-->
         </button>
         <button id="MicroG_btn" type="button" onclick="downloadMicroG()">MicroG</button>
-        <p id="DL-info">(download both Vanced and MicroG)</p>
+        <p id="DL-info">(Download both Vanced and MicroG)</p>
 
         <form>
-          <p class="content">help:</p>
+          <p class="content">Help:</p>
           <p class="content">
             <label>
               <input type="radio" id="nonroottutbtn" name="tutorial" onchange="nonRootTut()" checked="checked" />
-              <span>nonroot</span>
+              <span>Non-Root</span>
             </label>
           </p>
           <p class="content">
             <label>
               <input id="roottutbtn" type="radio" name="tutorial" onchange="rootTut()" />
-              <span>root</span>
+              <span>Root</span>
             </label>
           </p>
         </form>
@@ -210,7 +203,7 @@
       <div class="infocard">
         <h3>Changelog</h3>
         <div>
-          <p class="content">version:</p>
+          <p class="content">Version:</p>
           <p class="content">15.05.54</p>
         </div>
         <p>
@@ -242,6 +235,9 @@
     </div>
 
   </footer>
+  <!-- Compiled and minified JavaScript -->
+  <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
     window.onload = function () {  // Our Function - calling the Variable with "if"
       randomNumber = Math.floor(Math.random() * 9 + 1);  // Our Variable
@@ -278,6 +274,9 @@
       window.location = "downloads/MicroG/microg_YouTube_Vanced_0.2.6.17455_28052019.apk";
     }
 
+    $(document).ready(function(){
+      $('.tooltipped').tooltip();
+    });
 
   </script>
 
