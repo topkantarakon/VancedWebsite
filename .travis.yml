@@ -1,0 +1,23 @@
+language: generic
+sudo: required
+before_install:
+- chmod a+x deploy.sh
+- openssl aes-256-cbc -K $DEPLOY_KEY -iv $DEPLOY_IV -in deploy_rsa.enc -out /tmp/deploy_rsa -d
+- eval "$(ssh-agent -s)"
+- chmod 600 /tmp/deploy_rsa
+- ssh-add /tmp/deploy_rsa
+install:
+- ssh-keyscan $SERVER_NAME >> $HOME/.ssh/known_hosts
+script:
+- echo "skipping tests for now"
+deploy:
+- provider: script
+  script: "./deploy.sh"
+  skip_cleanup: true
+  on:
+    branch: master
+- provider: script
+  script: "./deploy.sh"
+  skip_cleanup: true
+  on:
+    branch: dev
