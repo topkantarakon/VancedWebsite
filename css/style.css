@@ -217,5 +217,6 @@ p {
 }
 .material-tooltip {
   background-color: rgba(0, 0, 0, 0.651) !important;
+  max-width: 280px;
 }
 /*# sourceMappingURL=style.css.map */
