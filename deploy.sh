@@ -10,6 +10,4 @@ echo "***********[ Update the build number for the site ]***********"
 ssh $SERVER_USERNAME@$SERVER_NAME "echo $TRAVIS_BUILD_NUMBER > $WEB_PATH/buildVersion.txt"
 ssh $SERVER_USERNAME@$SERVER_NAME "echo $TRAVIS_COMMIT > $COMMIT_NUMBER_PATH"
 ssh $SERVER_USERNAME@$SERVER_NAME ".$WEB_PATH/buildinfo.sh"
-echo "***********[ Removing the added version files so git pull doesn't fail next time ]***********"
-ssh $SERVER_USERNAME@$SERVER_NAME "rm -f $WEB_PATH/buildVersion.txt"
-ssh $SERVER_USERNAME@$SERVER_NAME "rm -f $COMMIT_NUMBER_PATH"
+
