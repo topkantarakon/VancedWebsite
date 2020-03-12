@@ -258,9 +258,9 @@ p {
   width: 100% !important;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1192px) {
   .row {
-    padding: 2% !important;
+    padding: 0% 2% !important;
     margin: 2% 0 !important;
   }
 }
