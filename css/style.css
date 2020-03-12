@@ -135,7 +135,7 @@ body::-webkit-scrollbar {
   }
 }
 
-.infocard .content:nth-of-type(1) {
+.infocard .content:nth-of-type(0) {
   width: 20%;
   display: inline-block;
 }
@@ -146,12 +146,24 @@ body::-webkit-scrollbar {
   text-overflow: ellipsis;
 }
 
+.infocard select {
+  width: 30%;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 600px) {
+  .infocard select {
+    width: 60%;
+  }
+}
+
 .infocard button {
   display: inline-block;
   min-width: auto;
   border-radius: 4px;
   background-color: #26A69A;
   padding: 6px;
+  margin: 0px;
   border-width: 0;
   color: white;
   -webkit-touch-callout: none;
@@ -183,8 +195,8 @@ body::-webkit-scrollbar {
 
 .infocard .q-btn {
   background-color: #26a69a;
-  padding: 0 0.5rem;
-  border-radius: 50%;
+  padding: 0 0.5em;
+  border-radius: 100px;
   display: inline-block;
   color: white;
 }
@@ -193,11 +205,13 @@ body::-webkit-scrollbar {
   background-color: #1d7d74;
 }
 
-.infocard form {
-  margin-bottom: 40px;
+.infocard fieldset {
+  border: 0;
+  margin: 0 0 40px 0;
+  padding: 0;
 }
 
-.infocard form p {
+.infocard fieldset p {
   color: #787878;
 }
 
@@ -206,7 +220,7 @@ body::-webkit-scrollbar {
   font-weight: bold;
 }
 
-.infocard form:nth-last-of-type(2) {
+.infocard fieldset:last-of-type {
   margin-bottom: 15px;
 }
 
@@ -262,13 +276,5 @@ p {
 
 #nonRootTut, #rootTut {
   display: block;
-}
-
-#ad {
-  background-color: #FBC02D;
-  border-radius: 5px;
-  display: inline-block;
-  padding: 2px 4px;
-  font-weight: 500;
 }
 /*# sourceMappingURL=style.css.map */

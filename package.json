@@ -1,0 +1,24 @@
+{
+  "name": "vancedwebsite",
+  "version": "2.0.0",
+  "description": "YouTube Vanced website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YTVanced/VancedWebsite.git"
+  },
+  "author": "MrDodojo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YTVanced/VancedWebsite/issues"
+  },
+  "homepage": "https://github.com/YTVanced/VancedWebsite#readme",
+  "dependencies": {
+    "https": "^1.0.0",
+    "md5-file": "^4.0.0"
+  }
+}

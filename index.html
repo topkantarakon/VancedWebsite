@@ -18,7 +18,7 @@
   <meta name="keywords" content="YouTube, Android, Vanced" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="" />
-  <meta property="og:image" content="images/logo.svg" />
+  <meta property="og:image" content="images/logobg.svg" />
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=3">
@@ -33,6 +33,7 @@
   <meta name="msapplication-TileColor" content="#0c0c0f">
   <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png?v=3">
   <meta name="theme-color" content="#0c0c0f">
+
 
 
   <!--Fonts -->
@@ -91,25 +92,62 @@
     <div class="col l6 s12">
       <div class="infocard">
         <h3>Downloads</h3>
-        <div class="toprow">
-          <p class="content">Version:</p>
-          <p class="content">15.05.54</p>
-        </div>
-        <form id="version_form">
+        <form action="/" method="post">
+          <div>
+            <p class="content">Version:</p>
+            <select class="browser-default" >
+              <option value="15.05.54" selected>15.05.54</option>
+              <option disabled>14.21.54</option>
+              <option disabled>14.10.53</option>
+            </select>
+          </div>
+          <fieldset id="variant">
+              <p class="content">variant:</p>
+              <label class="content">
+              <input type="radio" value="nonroot" name="variant" onchange="mButtonOn()" checked ><span>Nonroot</span>
+              </label>
+              <label class="content">
+              <input type="radio" value="root" name="variant" onchange="mButtonOff()"><span>Root</span>
+              </label><a class="q-btn tooltipped" data-position="left" data-tooltip="Non-Root is for phones without root access, pick this one if you're unsure.">?</a>
+          </fieldset>
+          <fieldset id="arch">
+            <p class="content">arch:</p>
+              <label class="content">
+              <input type="radio" value="default" name="arch" checked><span>Default</span>
+              </label>
+              <label class="content">
+              <input type="radio" value="legacy" name="arch"><span>Legacy</span>
+              </label><a class="q-btn tooltipped" data-position="left" data-tooltip="Default is for phones made after 2016 that have an arm64 chip, legacy is for older phones and pc android emulators.">?</a>
+          </fieldset>
+          <fieldset id="theme">
+            <p class="content">theme:</p>
+              <label class="content">
+              <input type="radio" value="dark" name="theme" checked><span>Dark</span>
+              </label>
+              <label class="content">
+              <input type="radio" value="black" name="theme"><span>Black</span>
+              </label><a class="q-btn tooltipped" data-position="left" data-tooltip="Dark is google dark gray colour, black is amoled pure black.">?</a>
+          </fieldset>
+          <button type="sumbit" name="button" value="download">download</button>
+          <!-- <button type="submit" name="button" value="hash" >md5 sum</button> -->
+          <button id="MicroG_btn" type="button" onclick="downloadMicroG()">MicroG</button>
+          <p id="DL-info">(Download both Vanced and MicroG)</p>
+      </form>
+        <!-- <form id="version_form">
           <p class="content">Variant:</p>
           <p class="content">
             <label>
-              <input name="version" type="radio" id="version--nonroot" value="nonroot" checked onchange="mButtonOn()" />
+              <input name="version" type="radio" id="version--nonroot" value="nonroot" checked  />
               <span>Non-Root</span>
             </label>
           </p>
           <p class="content">
             <label>
-              <input name="version" type="radio" id="version--root" value="root" onchange="mButtonOff()" />
+              <input name="version" type="radio" id="version--root" value="root"  />
               <span>Root</span>
             </label>
           </p>
-          <a class="q-btn tooltipped" data-position="left" data-tooltip="Non-Root is for phones without root access, pick this one if you're unsure.">?</a>
+          
         </form>
         <form id="arch_form">
           <p class="content">Arch:</p>
@@ -125,7 +163,7 @@
               <span>Legacy</span>
             </label>
           </p>
-         <a class="q-btn tooltipped" data-position="left" data-tooltip="Default is for phones made after 2016 that have an arm64 chip, legacy is for older phones and pc android emulators.">?</a>
+         
         </form>
 
         <form id="theme_form">
@@ -142,13 +180,11 @@
               <span>Black</span>
             </label>
           </p>
-          <a class="q-btn tooltipped" data-position="left" data-tooltip="Dark is google dark gray colour, black is amoled pure black.">?</a>
+          
         </form>
         <button class="button" onclick="download()"> Download Vanced
-          <!--styled button -> request server.js for files | pass ejs values from database back and send.file output-->
-        </button>
-        <button id="MicroG_btn" type="button" onclick="downloadMicroG()">MicroG</button>
-        <p id="DL-info">(Download both Vanced and MicroG)</p>
+        </button> -->
+
 
         <form>
           <p class="content">Help:</p>
@@ -165,11 +201,11 @@
             </label>
           </p>
         </form>
-        <p id="nonRootTut">1. Download and install MicroG<br>
+        <p id="nonRootTut">1. Download and install the MicroG APK<br>
           2. Download SAI from the playstore:
           <a
             href="https://play.google.com/store/apps/details?id=com.aefyr.sai">https://play.google.com/store/apps/details?id=com.aefyr.sai</a><br>
-          3. Select the vanced .apks file you downloaded (it's in your Downloads folder)<br>
+          3. Download Vanced and select the .apks file in SAI (it's in your Downloads folder)<br>
           4. Click install<br></p>
         <p id="rootTut" style="display: none;">1. Disable apk verification (look
           for
@@ -206,7 +242,7 @@
     <div class="col l6 s12">
       <div class="infocard">
         <h3>Changelog</h3>
-        <div>
+        <div class="toprow">
           <p class="content">Version:</p>
           <p class="content">15.05.54</p>
         </div>
@@ -234,7 +270,8 @@
     </div>
   </footer>
   <!-- Compiled and minified JavaScript -->
-
+  <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
     window.onload = function () {  // Our Function - calling the Variable with "if"
       randomNumber = Math.floor(Math.random() * 9 + 1);  // Our Variable
@@ -270,9 +307,83 @@
     function downloadMicroG() {
       window.location = "downloads/MicroG/microg_YouTube_Vanced_0.2.6.17455_28052019.apk";
     }
+        
     </script>
-    <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>var x, i, j, selElmnt, a, b, c;
+  /* Look for any elements with the class "custom-select": */
+  x = document.getElementsByClassName("custom-select");
+  for (i = 0; i < x.length; i++) {
+    selElmnt = x[i].getElementsByTagName("select")[0];
+    /* For each element, create a new DIV that will act as the selected item: */
+    a = document.createElement("DIV");
+    a.setAttribute("class", "select-selected");
+    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    x[i].appendChild(a);
+    /* For each element, create a new DIV that will contain the option list: */
+    b = document.createElement("DIV");
+    b.setAttribute("class", "select-items select-hide");
+    for (j = 1; j < selElmnt.length; j++) {
+      /* For each option in the original select element,
+      create a new DIV that will act as an option item: */
+      c = document.createElement("DIV");
+      c.innerHTML = selElmnt.options[j].innerHTML;
+      c.addEventListener("click", function(e) {
+          /* When an item is clicked, update the original select box,
+          and the selected item: */
+          var y, i, k, s, h;
+          s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+          h = this.parentNode.previousSibling;
+          for (i = 0; i < s.length; i++) {
+            if (s.options[i].innerHTML == this.innerHTML) {
+              s.selectedIndex = i;
+              h.innerHTML = this.innerHTML;
+              y = this.parentNode.getElementsByClassName("same-as-selected");
+              for (k = 0; k < y.length; k++) {
+                y[k].removeAttribute("class");
+              }
+              this.setAttribute("class", "same-as-selected");
+              break;
+            }
+          }
+          h.click();
+      });
+      b.appendChild(c);
+    }
+    x[i].appendChild(b);
+    a.addEventListener("click", function(e) {
+      /* When the select box is clicked, close any other select boxes,
+      and open/close the current select box: */
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+  }
+  
+  function closeAllSelect(elmnt) {
+    /* A function that will close all select boxes in the document,
+    except the current select box: */
+    var x, y, i, arrNo = [];
+    x = document.getElementsByClassName("select-items");
+    y = document.getElementsByClassName("select-selected");
+    for (i = 0; i < y.length; i++) {
+      if (elmnt == y[i]) {
+        arrNo.push(i)
+      } else {
+        y[i].classList.remove("select-arrow-active");
+      }
+    }
+    for (i = 0; i < x.length; i++) {
+      if (arrNo.indexOf(i)) {
+        x[i].classList.add("select-hide");
+      }
+    }
+  }
+  
+  /* If the user clicks anywhere outside the select box,
+  then close all select boxes: */
+  document.addEventListener("click", closeAllSelect);</script>
     <script>$(document).ready(function(){$('.tooltipped').tooltip();});</script>
 </body>
 </html>

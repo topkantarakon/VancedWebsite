@@ -43,7 +43,6 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-
 #header {
     height: 100%;
     width: 100vw;
@@ -118,7 +117,7 @@ body::-webkit-scrollbar {
       0px 8px 10px 1px hsla(0, 0%, 0%, 0.14),
       0px 3px 14px 2px hsla(0, 0%, 0%, 0.12),
       0px 5px 5px -3px hsla(0, 0%, 0%, 0.2);
-        .content:nth-of-type(1){
+        .content:nth-of-type(0){
             width: 20%;
             display: inline-block;
         }
@@ -127,12 +126,24 @@ body::-webkit-scrollbar {
             display: inline-block;
             text-overflow:ellipsis;
         }
+
+        select {
+            width: 30%;
+            display: inline-block;
+        }
+        @media only screen and (max-width: 600px) {
+           select {
+               width: 60%
+           }
+          }
+          
         button {
             display: inline-block;
             min-width: auto;
             border-radius: 4px;
             background-color: $primary-hint; 
             padding: 6px;
+            margin: 0px;
             border-width: 0; 
             color: white;
             //noselect
@@ -158,16 +169,18 @@ body::-webkit-scrollbar {
         }
         .q-btn {
             background-color: #26a69a;
-            padding: 0 0.5rem;
-            border-radius: 50%;
+            padding: 0 0.5em;
+            border-radius: 100px;
             display: inline-block;
             color: white;
             &:hover {
                 background-color: $primary-hint-darken;
             }
         }
-        form {
-            margin-bottom: 40px;
+        fieldset {
+            border: 0;
+            margin: 0 0 40px 0;
+            padding: 0;
             p{
                 color: $text-hint;
             }
@@ -177,16 +190,16 @@ body::-webkit-scrollbar {
             font-weight: bold;
         }
 
-        form:nth-last-of-type(2) {
+        fieldset:last-of-type {
             margin-bottom: 15px;
         }
         div:first-of-type {
-            font-weight: bold;
-            margin-bottom: 20px;
-            p:nth-child(1) {
-                color: $text-hint;
-            }
-        }
+             font-weight: bold;
+             margin-bottom: 20px;
+        p:nth-child(1) {
+                 color: $text-hint;
+             }
+         }
         .text-hint {
             color: $text-hint;
         }
@@ -226,11 +239,4 @@ p{
 }
 #nonRootTut, #rootTut {
     display: block;
-}
-#ad {
-    background-color: #FBC02D;
-    border-radius: 5px;
-    display: inline-block;
-    padding: 2px 4px;
-    font-weight: 500;
 }
