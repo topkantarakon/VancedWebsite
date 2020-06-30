@@ -90,102 +90,16 @@
   <main class="row">
     <div class="col l6 s12">
       <div class="infocard">
-        <h3>Downloads</h3>
-        <div class="toprow">
-          <p class="content">Version:</p>
-          <p class="content">15.05.54</p>
-        </div>
-        <form id="version_form">
-          <p class="content">Variant:</p>
-          <p class="content">
-            <label>
-              <input name="version" type="radio" id="version--nonroot" value="nonroot" checked onchange="mButtonOn()" />
-              <span>Non-Root</span>
-            </label>
-          </p>
-          <p class="content">
-            <label>
-              <input name="version" type="radio" id="version--root" value="root" onchange="mButtonOff()" />
-              <span>Root</span>
-            </label>
-          </p>
-          <a class="q-btn tooltipped" data-position="left" data-tooltip="Non-Root is for phones without root access, pick this one if you're unsure.">?</a>
-        </form>
-        <form id="arch_form">
-          <p class="content">Arch:</p>
-          <p class="content">
-            <label>
-              <input name="arch" type="radio" id="arch--normal" value="default" checked />
-              <span>Default</span>
-            </label>
-          </p>
-          <p class="content">
-            <label>
-              <input name="arch" type="radio" id="arch--legacy" value="legacy" />
-              <span>Legacy</span>
-            </label>
-          </p>
-         <a class="q-btn tooltipped" data-position="left" data-tooltip="Default is for phones made after 2016 that have an arm64 chip, legacy is for older phones and pc android emulators.">?</a>
-        </form>
+        <h3>Download</h3>
 
-        <form id="theme_form">
-          <p class="content">Theme:</p>
-          <p class="content">
-            <label>
-              <input name="theme" type="radio" id="theme--dark" value="dark" checked />
-              <span>Dark</span>
-            </label>
-          </p>
-          <p class="content">
-            <label>
-              <input name="theme" type="radio" id="theme--black" value="black" />
-              <span>Black</span>
-            </label>
-          </p>
-          <a class="q-btn tooltipped" data-position="left" data-tooltip="Dark is google dark gray colour, black is amoled pure black.">?</a>
-        </form>
-        <button class="button" onclick="download()"> Download Vanced
+	<p>You asked, we listened. Introducing the whole new Vanced Manager. Vanced Manager will make installing and updating Vanced easier than ever.</p>
+
+        <button class="button" onclick="openGithub()"> Download Vanced Manager
           <!--styled button -> request server.js for files | pass ejs values from database back and send.file output-->
         </button>
-        <button id="MicroG_btn" type="button" onclick="downloadMicroG()">MicroG</button>
-        <p id="DL-info">(Download both Vanced and MicroG)</p>
 
-        <form>
-          <p class="content">Help:</p>
-          <p class="content">
-            <label>
-              <input type="radio" id="nonroottutbtn" name="tutorial" onchange="nonRootTut()" checked="checked" />
-              <span>Non-Root</span>
-            </label>
-          </p>
-          <p class="content">
-            <label>
-              <input id="roottutbtn" type="radio" name="tutorial" onchange="rootTut()" />
-              <span>Root</span>
-            </label>
-          </p>
-        </form>
-        <p id="nonRootTut">1. Download and install MicroG<br>
-          2. Download SAI from the playstore:
-          <a
-            href="https://play.google.com/store/apps/details?id=com.aefyr.sai">https://play.google.com/store/apps/details?id=com.aefyr.sai</a><br>
-          3. Select the vanced .apks file you downloaded (it's in your Downloads folder)<br>
-          4. Click install<br></p>
-        <p id="rootTut" style="display: none;">1. Disable apk verification (look
-          for
-          an
-          xposed module
-          or similiar app to do this) <a
-            href="https://forum.xda-developers.com/apps/magisk/module-smali-patcher-0-7-t3680053">https://forum.xda-developers.com/apps/magisk/module-smali-patcher-0-7-t3680053</a>
-          works for Android &lt; 10<br>
-          2. Download SAI from the playstore:
-          <a
-            href="https://play.google.com/store/apps/details?id=com.aefyr.sai">https://play.google.com/store/apps/details?id=com.aefyr.sai</a><br>
-          3. Enable root mode in SAI<br>
-          4. Select the vanced .apks file you downloaded (it's in your Downloads folder)<br>
-          5. Click install<br></p>
-        <a href="https://www.mediafire.com/folder/773e97cz2ezx1/AddFree_Youtube_BackgroundPlay_Enabled" class="text">Looking for the older versions? <u>click
-            here!</u></a>
+        <p><a href="https://www.mediafire.com/folder/773e97cz2ezx1/AddFree_Youtube_BackgroundPlay_Enabled" class="text">Looking for the older versions? <u>click
+            here!</u></a></p>
       </div>
     </div>
 
@@ -241,34 +155,8 @@
 
       document.getElementById("content" + randomNumber).style.display = "inline";
     }
-    function download() {
-      window.location = "/downloads/YouTube_Vanced-v15.05.54-" + document.getElementById("version_form").querySelector('input:checked').value + "-" + document.getElementById("arch_form").querySelector('input:checked').value + "-" + document.getElementById("theme_form").querySelector('input:checked').value + ".apks";
-    }
-    function rootTut() {
-      document.getElementById("rootTut").style.display = "block";
-      document.getElementById("nonRootTut").style.display = "none";
-    }
-    function nonRootTut() {
-      document.getElementById("nonRootTut").style.display = "block";
-      document.getElementById("rootTut").style.display = "none";
-
-    }
-
-    function mButtonOff() {
-      document.getElementById("MicroG_btn").style.display = "none";
-      document.getElementById("DL-info").style.display = "none";
-      document.getElementById("roottutbtn").checked = true;
-      rootTut();
-    }
-    function mButtonOn() {
-      document.getElementById("MicroG_btn").style.display = "inline-block";
-      document.getElementById("DL-info").style.display = "inline";
-      document.getElementById("nonroottutbtn").checked = true;
-      nonRootTut();
-    }
-
-    function downloadMicroG() {
-      window.location = "downloads/MicroG/microg_YouTube_Vanced_0.2.6.17455_28052019.apk";
+    function openGithub() {
+      window.location.href = "https://github.com/YTVanced/VancedManager/releases/latest";
     }
     </script>
     <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
