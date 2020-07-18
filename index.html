@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!--HEY YOU! YES YOU! How are you? Add me on Discord! MrDojodo#3373-->
-<!--Vanced is very extra very super advenced, wait the ads are gone.. OhnoOO!.. Wait? Who likes ads... My brain too big for this-->
 <html lang="en">
 
 <head>
@@ -77,10 +75,7 @@
         Please don't ask for a video download feature
       </h4>
       <h4 id="content8" class="white-text thin">
-        "yeah sex is cool and all but have you tried blocking YouTube ads on mobile?"
-      </h4>
-      <h4 id="content9" class="white-text thin">
-        ~xinto
+        yeah sex is cool and all but have you tried blocking YouTube ads on mobile?
       </h4>
     </div>
     <div class="top-panel"></div>
@@ -92,9 +87,9 @@
       <div class="infocard">
         <h3>Download</h3>
 
-	<p>You asked, we listened. Introducing the amazing new Vanced Manager! Vanced Manager will make installing and updating Vanced easier than ever.</p>
+	      <p>You asked, we listened. Introducing the amazing new Vanced Manager! Vanced Manager will make installing and updating Vanced easier than ever.</p>
 
-        <button class="button" onclick="openGithub()"> Download Vanced Manager
+        <button class="button" onclick="window.location.href='https://github.com/YTVanced/VancedManager/releases/latest/download/manager.apk'"> Download Vanced Manager
           <!--styled button -> request server.js for files | pass ejs values from database back and send.file output-->
         </button>
 
@@ -139,28 +134,34 @@
   </main>
   <footer class="center-align" style="padding: 0px">
     <div style="background-color: #00AF9D">
-      Website by
-      <b><u><a class="white-text" href="https://t.me/MrDodojo">MrDodojo</a></u></b>
+      Find us on:
+      <b><u><a class="white-text" href="https://github.com/YTVanced">GitHub</a></u></b>
       /
-      <b><u><a class="white-text" href="https://discordapp.com/users/314467770500644875">MrDojodo#3373</a></u></b>
+      <b><u><a class="white-text" href="https://vanced.app/discord">Discord</a></u></b>
+      /
+      <b><u><a class="white-text" href="https://t.me/Vanced">Telegram</a></u></b>
+      /
+      <b><u><a class="white-text" href="https://reddit.com/r/Vanced">Reddit</a></u></b>
+      /
+      <b><u><a class="white-text" href="https://twitter.com/YTVanced">Twitter</a></u></b>
       /
       <u><a class="white-text" href="https://github.com/YTVanced/VancedWebsite/commit/{{commitNumber}}">Build-{{buildNumber}}</a></u>
     </div>
   </footer>
   <!-- Compiled and minified JavaScript -->
 
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
-    window.onload = function () {  // Our Function - calling the Variable with "if"
-      randomNumber = Math.floor(Math.random() * 9 + 1);  // Our Variable
-
-      document.getElementById("content" + randomNumber).style.display = "inline";
-    }
-    function openGithub() {
-      window.location.href = "https://github.com/YTVanced/VancedManager/releases/latest/download/manager.apk";
-    }
+    $(document).ready(
+      function () { 
+        $('.tooltipped').tooltip(); 
+      });
+      
+    $(window).load(
+      function () { 
+        $("#content" + Math.floor(Math.random() * 8 + 1)).css("display", "inline");
+      })
     </script>
-    <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>$(document).ready(function(){$('.tooltipped').tooltip();});</script>
 </body>
 </html>
